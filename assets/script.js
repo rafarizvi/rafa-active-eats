@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 function searchRecipe(calorie) {
     
 
@@ -21,6 +22,14 @@ function searchRecipe(calorie) {
 function exercises() {
 
     var activity = 'skiing'
+=======
+// Exercises API k163haKKqYGpamQeCQMW4A==hVWwjQzS9u8h36xK //tamer 
+
+
+
+function exercises() {
+    var activity = 'walking'
+>>>>>>> ca44c4b5e32da1445d1e51ee936d852d2b7404ec
     $.ajax({
         method: 'GET',
         url: 'https://api.api-ninjas.com/v1/caloriesburned?activity=' + activity,
@@ -35,8 +44,34 @@ function exercises() {
     });
 }
 
+<<<<<<< HEAD
 
 // function takes in calorie amount.
 exercises();
 searchRecipe(500);
 
+=======
+let activity = "Walking" //retype the workout activity type and will change via output
+
+function workout(workoutData) {
+    const {calories_per_hour} = workoutData;
+  
+    if (workoutData) {
+      const nameTitle = document.createElement('h6');
+      nameTitle.textContent = `Workout Name: ${activity}, Calories Per Hour: ${calories_per_hour}`
+      
+      const nameSection = document.getElementById('workout')
+      nameSection.innerHTML = ''
+      nameSection.appendChild(nameTitle);
+    }
+  }
+  
+  document.getElementById('button').addEventListener('click', function() {
+    const sampleWorkoutData = {
+      name: activity,
+      calories_per_hour: 500
+    }
+    workout(sampleWorkoutData);
+  })
+  exercises()
+>>>>>>> ca44c4b5e32da1445d1e51ee936d852d2b7404ec
