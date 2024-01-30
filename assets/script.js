@@ -18,24 +18,25 @@ function exercises() {
     });
 }
 
-let activity = "Walking" //retype the workout activity type and will change via output
+let activity = "running"
 
 function workout(workoutData) {
-    const {calories_per_hour} = workoutData;
+    const {name, calories_per_hour} = workoutData;
   
     if (workoutData) {
       const nameTitle = document.createElement('h6');
       nameTitle.textContent = `Workout Name: ${activity}, Calories Per Hour: ${calories_per_hour}`
       
-      const nameSection = document.getElementById('workout')
+      const nameSection = document.getElementById('name')
       nameSection.innerHTML = ''
       nameSection.appendChild(nameTitle);
+      console.log(workoutData)
     }
   }
   
   document.getElementById('button').addEventListener('click', function() {
     const sampleWorkoutData = {
-      name: activity,
+      name: 'activity',
       calories_per_hour: 500
     }
     workout(sampleWorkoutData);
