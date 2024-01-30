@@ -48,40 +48,54 @@
 
 <body>
   <!-- layout for the workout -->
-  <div class="card">
-    <img class="card-img-top" src="" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-    </div>
-    <nav class="navbar navbar-light bg-light">
-      <form class="form-inline">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
-    </nav>
-    <div class="card-footer">
-      <small class="text-muted">Last updated 3 mins ago</small>
-    </div>
-  </div>
-
-
-
+  <div class="card-deck">
     <div class="card">
-      <img class="card-img-top" src="" alt="Card image cap">
+      <img class="card-img-top" src="https://img.freepik.com/free-photo/dumbbells-floor-gym-ai-generative_123827-23744.jpg" alt="Card image cap">
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
+        <h5 class="card-title">Workouts</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+      </div>
+      <nav class="navbar navbar-light bg-light">
+        <form class="form-inline">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <br>
+          <br>
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          <button type="button" class="btn btn-primary m-2">Add to favorites</button>
+        </form>
+      </nav>
+      <div class="card-footer">
+      </div>
+    </div>
+
+
+<!-- this is for the food -->
+    <div class="card">
+      <img class="card-img-top" src="https://www.eatingwell.com/thmb/m5xUzIOmhWSoXZnY-oZcO9SdArQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/article_291139_the-top-10-healthiest-foods-for-kids_-02-4b745e57928c4786a61b47d8ba920058.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Food Recipes</h5>
         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
       </div>
       <nav class="navbar navbar-light bg-light">
         <form class="form-inline">
           <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          <button type="button" class="btn btn-primary m-2">Add to favorites</button>
         </form>
       </nav>
       <div class="card-footer">
-        <small class="text-muted">Last updated 3 mins ago</small>
       </div>
+    </div>
+  </div>
+  <div class="card" style="width: 18rem;">
+    <img class="card-img-top" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title"></h5>
+      <p class="card-text" id="name"></p>
+      <a id="button" class="btn btn-primary">Add to favorites</a>
+      <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"></script>
+      <script src="./assets/script.js"></script>
     </div>
   </div>
 
