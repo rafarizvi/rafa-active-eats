@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 function searchRecipe(calorie) {
     
 
@@ -24,9 +25,38 @@ function exercises() {
     var activity = 'skiing'
 =======
 // Exercises API k163haKKqYGpamQeCQMW4A==hVWwjQzS9u8h36xK //tamer 
+=======
+//created variables for URL and key
+const workoutUrl = "https://api.api-ninjas.com/v1/caloriesburned?activity="
+const workoutApi = "k163haKKqYGpamQeCQMW4A==hVWwjQzS9u8h36xK"
+>>>>>>> 9b3c999c238bd48191781ab6d8c181077ec46cf9
 
 
+document.getElementById("workoutBtn").addEventListener("click", function () {
+    function getExercises() {
+        const activity = "running"
+        $.ajax({
+            method: 'GET',
+            url: workoutUrl + activity,
+            headers: { 'X-Api-Key': workoutApi },
+            contentType: 'application/json',
+            success: function (result) {
+                console.log(result);
+                exercises(result)
+            },
+            error: function ajaxError(jqXHR) {
+                console.error('Error: ', jqXHR.responseText);
+            }
+            
+        });
+        
+    }
+    getExercises()
+    //to show that when the button is clicked, api is working
+    console.log("button click to pull API working")
+});
 
+<<<<<<< HEAD
 function exercises() {
     var activity = 'walking'
 >>>>>>> ca44c4b5e32da1445d1e51ee936d852d2b7404ec
@@ -80,3 +110,21 @@ function workout(workoutData) {
   })
   exercises()
 >>>>>>> ca44c4b5e32da1445d1e51ee936d852d2b7404ec
+=======
+//! currently not working
+function exercises(workoutData) {
+    let running = workoutData[0].calories_per_hour
+    if (running) {
+        //created element for the date
+        const calories = running
+        const caloriesTitle = document.createElement('p')
+        caloriesTitle.textContent = `${calories}`
+        const caloriesSection = document.getElementById('workoutName')
+        caloriesSection.innerHTML = ''
+        caloriesSection.appendChild(caloriesTitle)
+    }
+    console.log(running)
+}
+
+document.getElementById('workoutBtn').addEventListener('click', exercises())
+>>>>>>> 9b3c999c238bd48191781ab6d8c181077ec46cf9
