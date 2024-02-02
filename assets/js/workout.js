@@ -65,18 +65,18 @@ document.getElementById("viewWorkoutFavBtn").addEventListener("click", function 
     let workout = workoutInput.value
     let lastFave = {
         workout: workout,
-        Activity: workout
+        // Activity: workout
     }
-    let allWorkouts = localStorage.getItem("allWorkouts");
-    if (allWorkouts === null) {
-        allWorkouts = []
+    let storedWorkout = localStorage.getItem("allWorkouts");
+    if (storedWorkout === null) {
+        storedWorkout = []
     } else {
-        allWorkouts = JSON.parse(allWorkouts)
+        storedWorkout = JSON.parse(storedWorkout)
     }
 
-    allWorkouts.push(lastFave)
-    let newFav = JSON.stringify(allWorkouts)
-    localStorage.setItem("allWorkouts", newFav)
-    window.location.replace("workoutFavs.html")
+    storedWorkout.push(lastFave)
+    let newFav = JSON.stringify(storedWorkout)
+    localStorage.setItem("storedWorkout", newFav)
+    window.location.replace("favs.html")
 })
-console.log(storedData)
+// console.log(storedData)
