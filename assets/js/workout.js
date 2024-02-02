@@ -77,6 +77,6 @@ document.getElementById("viewWorkoutFavBtn").addEventListener("click", function 
     storedWorkout.push(lastFave)
     let newFav = JSON.stringify(storedWorkout)
     localStorage.setItem("storedWorkout", newFav)
-    window.location.replace("workoutFavs.html")
+    window.location.replace("favs.html")
 })
 // console.log(storedData)
