@@ -13,6 +13,7 @@ document.getElementById("workoutBtn").addEventListener("click", function () {
             contentType: 'application/json',
             success: function (result) {
                 console.log(result);
+                exercises(result)
             },
             error: function ajaxError(jqXHR) {
                 console.error('Error: ', jqXHR.responseText);
@@ -28,16 +29,17 @@ document.getElementById("workoutBtn").addEventListener("click", function () {
 
 //! currently not working
 function exercises(workoutData) {
-    const {calories_per_hour} = workoutData
-    if (workoutData) {
+    let running = workoutData[0].calories_per_hour
+    if (running) {
         //created element for the date
-        const calories = calories_per_hour
+        const calories = running
         const caloriesTitle = document.createElement('p')
         caloriesTitle.textContent = `${calories}`
         const caloriesSection = document.getElementById('workoutName')
         caloriesSection.innerHTML = ''
         caloriesSection.appendChild(caloriesTitle)
     }
+    console.log(running)
 }
 
 document.getElementById('workoutBtn').addEventListener('click', exercises())
