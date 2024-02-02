@@ -1,4 +1,4 @@
-let allWorkouts = localStorage.getItem("allWorkouts");
+let storedWorkout = localStorage.getItem("storedWorkout");
 let newFav = document.getElementById("allFavorites");
 let clear = document.querySelector("#clear");
 
@@ -8,17 +8,17 @@ clear.addEventListener("click", function () {
 });
 
 goBack.addEventListener("click", function () {
-    window.location.replace("./index.html");
+    window.location.replace("workout.html");
 });
-allWorkouts = JSON.parse(allWorkouts);
+storedWorkout = JSON.parse(storedWorkout);
 
-if (allWorkouts !== null) {
+if (storedWorkout !== null) {
 
-    for (let i = 0; i < allWorkouts.length; i++) {
+    for (let i = 0; i < storedWorkout.length; i++) {
 
         let workoutFavSection = document.createElement("li");
         //workout and activity current undefinded
-        workoutFavSection.textContent = allWorkouts[i].workout + " : " + allWorkouts[i].activity;
+        workoutFavSection.textContent = storedWorkout[i].Workout + " : " + storedWorkout[i].Activity;
         newFav.appendChild(workoutFavSection)
 
     }
