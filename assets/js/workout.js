@@ -32,16 +32,16 @@ document.getElementById("workoutBtn").addEventListener("click", function () {
 //the user enters into the search field.
 
 function exercises(workoutData) {
-    let running = workoutData[0].calories_per_hour;
-    if (running) {
-        const workoutChoice = running;
+    let activity = workoutData[0].calories_per_hour;
+    if (activity) {
+        const workoutChoice = activity;
         const workoutChoiceEl = document.createElement('p');
         workoutChoiceEl.textContent = `${workoutChoice} calories`;
         const workoutChoiceElSection = document.getElementById('workoutName');
         workoutChoiceElSection.innerHTML = '';
         workoutChoiceElSection.appendChild(workoutChoiceEl);
     }
-    console.log(running);
+    console.log(activity);
 }
 
 
@@ -51,16 +51,19 @@ document.getElementById("workoutFavBtn").addEventListener("click", function () {
         localStorage.setItem('storedWorkout', workoutText);
     })
 
-let workoutInput = document.createElement("input")
+
+
 
 function addFavoriteWorkout(workoutData) {
     document.getElementById("viewWorkoutFavBtn").addEventListener("click", function() {
-        let calories = workoutData[0].calories_per_hour;
-        let workout = workoutData[1].name;
+        let calories = workoutData[0].total_calories;
+        let workout = workoutData[0].name;
+        let workoutDuration = workoutData[0].duration_minutes;
         let lastFave = {
-            workout: "You will be running " + workout,
-            bruning: calories + " Calories"
-        }
+            workout: "You will be " + workout,
+            workoutDuration: " for " + workoutDuration + " minutes",
+            bruning: ", burning a total of " + calories + " Calories."
+    }
         let storedWorkout = localStorage.getItem("allWorkouts");
 
         if (storedWorkout === null) {
@@ -82,5 +85,8 @@ function searchWorkout() {
     const locationTitle = document.getElementById('searchWorkout')
     const location = locationTitle.value;
     if (location.length > 0) {
-    }
+        fetchWeather(location).then(weatherInfo)
+
+}
+console.log(locationTitle)
 }
