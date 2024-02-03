@@ -63,8 +63,8 @@
           <h5 class="card-title">Find Recipes</h5>
           <p class="card-text">Searched Food</p>
           <section class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
+            <input class="form-control me-2" type="search" id="searchRecipe" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" id="recipeBtn" type="submit">Search</button>
           </section>
         </div>
       </div>
@@ -85,16 +85,18 @@
         </div>
       </div>
     </div>
+    <!-- Generated recipes -->
     <div class="col">
       <div class="card all-cards">
-        <div class="card-body">
+        <div class="card-body displayRecipe">
           <h5 class="card-title">Searched Food Recipes</h5>
           <p class="card-text">Food Recipes generated here!</p>
-          <button type="button" id="foodFavsBtn" class="btn btn-primary">Add to Favorites</button>
-          <button type="button" id="viewFoodFavsBtn" class="btn btn-primary">View Favorites</button>
+          <button type="button" id="recipeFavsBtn" class="btn btn-primary">Add to Favorites</button>
+          <button type="button" id="viewRecipeFavsBtn" class="btn btn-primary">View Favorites</button>
         </div>
       </div>
     </div>
+    <!-- Generated workouts -->
     <div class="col">
       <div class="card all-cards">
         <div class="card-body">
@@ -109,6 +111,7 @@
   <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
     crossorigin="anonymous"></script>
   <script src="./assets/js/workout.js"></script>
+  <script src="./assets/js/recipe.js"></script>
 
 </body>
 
