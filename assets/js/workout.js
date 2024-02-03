@@ -1,14 +1,16 @@
 //created variables for URL and key
-const workoutUrl = "https://api.api-ninjas.com/v1/caloriesburned?activity="
-const workoutApi = "k163haKKqYGpamQeCQMW4A==hVWwjQzS9u8h36xK"
 
 
 document.getElementById("workoutBtn").addEventListener("click", function () {
+let searchedWorkout = "running"
+let workoutUrl = `https://api.api-ninjas.com/v1/caloriesburned?activity=${searchedWorkout}`
+let workoutApi = "k163haKKqYGpamQeCQMW4A==hVWwjQzS9u8h36xK"
+
     function getExercises() {
-        const activity = "running"
+        // let workoutNow = "running"
         $.ajax({
             method: 'GET',
-            url: workoutUrl + activity,
+            url: workoutUrl,
             headers: { 'X-Api-Key': workoutApi },
             contentType: 'application/json',
             success: function (result) {
@@ -51,7 +53,9 @@ document.getElementById("workoutFavBtn").addEventListener("click", function () {
         localStorage.setItem('storedWorkout', workoutText);
     })
 
-
+    document.getElementById("viewWorkoutFavBtn").addEventListener("click", function() {
+        window.location.replace("favs.html");
+})
 
 
 function addFavoriteWorkout(workoutData) {
@@ -82,11 +86,11 @@ function addFavoriteWorkout(workoutData) {
 
 
 function searchWorkout() {
-    const locationTitle = document.getElementById('searchWorkout')
-    const location = locationTitle.value;
+    const resultsTitle = document.getElementById('searchWorkout')
+    const result = resultsTitle.value;
     if (location.length > 0) {
-        fetchWeather(location).then(weatherInfo)
+        getExercises(result)
 
 }
-console.log(locationTitle)
+console.log(resultsTitle)
 }
