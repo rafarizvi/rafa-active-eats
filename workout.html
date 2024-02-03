@@ -62,9 +62,25 @@
         <div class="card-body">
           <h5 class="card-title">Find Recipes</h5>
           <p class="card-text">Searched Food</p>
-          <section class="d-flex">
+          <section class="d-flex flex-wrap">
             <input class="form-control me-2" type="search" id="searchRecipe" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success" id="recipeBtn" type="submit">Search</button>
+            <select class="form-select" aria-label="Default select example">
+              <option selected>Select Diet</option>
+              <option value="balanced">balanced</option>
+              <option value="high-fiber">high-fiber</option>
+              <option value="high-protein">high-protein</option>
+              <option value="low-carb">low-carb</option>
+              <option value="low-fat">low-fat</option>
+              <option value="low-sodium">low-sodium</option>
+            </select>
+            <select class="form-select" aria-label="Default select example">
+              <option selected>Select Meal</option>
+              <option value="Breakfast">Breakfast</option>
+              <option value="Dinner">Dinner</option>
+              <option value="Lunch">Lunch</option>
+              <option value="Snack">Snack</option>
+            </select>
           </section>
         </div>
       </div>

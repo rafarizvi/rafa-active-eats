@@ -18,46 +18,48 @@ function inputValues() {
     console.log(calorieVal);
 }
 
+recipeSearchBtn.addEventListener('click', inputValues);
 
-// searches for recipe base on calorie input and optional diet type & meal type.
-function selectRecipe(dietType, mealType, calories) {
+
+// // searches for recipe base on calorie input and optional diet type & meal type.
+// function selectRecipe(dietType, mealType, calories) {
         
-    if (diet && !meal) {
-        let useUrl = `https://api.edamam.com/api/recipes/v2?type=public&app_id=1dd9ebcd&app_key=28e8360ca293fa5f78e0ef9ab5dbd9d0&diet=${dietType}&calories=${calories}&imageSize=SMALL&imageSize=REGULAR&imageSize=LARGE&random=true`;
-        searchRecipe(useUrl);
-    } else if (!diet && meal) {
-        let useUrl = `https://api.edamam.com/api/recipes/v2?type=public&app_id=1dd9ebcd&app_key=28e8360ca293fa5f78e0ef9ab5dbd9d0&mealType=${mealType}&calories=${calories}&imageSize=SMALL&imageSize=REGULAR&imageSize=LARGE&random=true`;
-        searchRecipe(useUrl);
-    } else {
-        let useUrl = `https://api.edamam.com/api/recipes/v2?type=public&app_id=1dd9ebcd&app_key=28e8360ca293fa5f78e0ef9ab5dbd9d0&diet=${dietType}&mealType=${mealType}&calories=${calories}&imageSize=SMALL&imageSize=REGULAR&imageSize=LARGE&random=true`;
-        searchRecipe(useUrl);
-    }
+//     if (diet && !meal) {
+//         let useUrl = `https://api.edamam.com/api/recipes/v2?type=public&app_id=1dd9ebcd&app_key=28e8360ca293fa5f78e0ef9ab5dbd9d0&diet=${dietType}&calories=${calories}&imageSize=SMALL&imageSize=REGULAR&imageSize=LARGE&random=true`;
+//         searchRecipe(useUrl);
+//     } else if (!diet && meal) {
+//         let useUrl = `https://api.edamam.com/api/recipes/v2?type=public&app_id=1dd9ebcd&app_key=28e8360ca293fa5f78e0ef9ab5dbd9d0&mealType=${mealType}&calories=${calories}&imageSize=SMALL&imageSize=REGULAR&imageSize=LARGE&random=true`;
+//         searchRecipe(useUrl);
+//     } else {
+//         let useUrl = `https://api.edamam.com/api/recipes/v2?type=public&app_id=1dd9ebcd&app_key=28e8360ca293fa5f78e0ef9ab5dbd9d0&diet=${dietType}&mealType=${mealType}&calories=${calories}&imageSize=SMALL&imageSize=REGULAR&imageSize=LARGE&random=true`;
+//         searchRecipe(useUrl);
+//     }
     
-    // const recipeUrl = `https://api.edamam.com/api/recipes/v2?type=public&app_id=1dd9ebcd&app_key=28e8360ca293fa5f78e0ef9ab5dbd9d0&diet=${dietType}&mealType=${mealType}&calories=${calories}&imageSize=SMALL&imageSize=REGULAR&imageSize=LARGE&random=true`;
-}
+//     // const recipeUrl = `https://api.edamam.com/api/recipes/v2?type=public&app_id=1dd9ebcd&app_key=28e8360ca293fa5f78e0ef9ab5dbd9d0&diet=${dietType}&mealType=${mealType}&calories=${calories}&imageSize=SMALL&imageSize=REGULAR&imageSize=LARGE&random=true`;
+// }
 
-function searchRecipe(recipeUrl) {
+// function searchRecipe(recipeUrl) {
     
-    fetch(recipeUrl)
-    .then(function(response) {
-        if (response.ok) {
-            response.json().then(function(data) {
-                // console.log(data);
-                console.log('recipe2 api works');
-                console.log(data);
+//     fetch(recipeUrl)
+//     .then(function(response) {
+//         if (response.ok) {
+//             response.json().then(function(data) {
+//                 // console.log(data);
+//                 console.log('recipe2 api works');
+//                 console.log(data);
                 
                 
-            })
-        } else {
-            alert(`Error: ${response.statusText}`);
-        }
-    })
-}
+//             })
+//         } else {
+//             alert(`Error: ${response.statusText}`);
+//         }
+//     })
+// }
 
 
-let diet = '';
-let meal = 'dinner';
-let calories = '300';
+// let diet = '';
+// let meal = 'dinner';
+// let calories = '300';
 
-selectRecipe(diet, meal, calories);
+// selectRecipe(diet, meal, calories);
 
