@@ -34,7 +34,11 @@ let workoutApi = "k163haKKqYGpamQeCQMW4A==hVWwjQzS9u8h36xK"
 //the user enters into the search field.
 
 function exercises(workoutData) {
-    let activity = workoutData[0].calories_per_hour;
+    let activity = [
+        "This workout will include " + workoutData[0].name,
+        " for " + workoutData[0].duration_minutes + " minutes",
+        " which will burn " + workoutData[0].calories_per_hour + " total"
+    ]
     if (activity) {
         const workoutChoice = activity;
         const workoutChoiceEl = document.createElement('p');
