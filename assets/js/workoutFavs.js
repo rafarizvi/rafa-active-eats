@@ -17,10 +17,8 @@ if (storedWorkout !== null) {
     for (let i = 0; i < storedWorkout.length; i++) {
 
         let workoutFavSection = document.createElement("li");
-        //workout and activity current undefinded
-        workoutFavSection.textContent = storedWorkout[i].workout + " : " + storedWorkout[i].bruning;
+        workoutFavSection.textContent = storedWorkout[i].workout + storedWorkout[i].workoutDuration + storedWorkout[i].bruning 
         newFav.appendChild(workoutFavSection)
-
     }
 }
 
