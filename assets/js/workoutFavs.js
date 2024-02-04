@@ -15,6 +15,7 @@ storedWorkout = JSON.parse(storedWorkout);
 if (storedWorkout !== null) {
 
     for (let i = 0; i < storedWorkout.length; i++) {
+
         let workoutFavSection = document.createElement("li");
         workoutFavSection.textContent = storedWorkout[i].workout + storedWorkout[i].workoutDuration + storedWorkout[i].bruning 
         newFav.appendChild(workoutFavSection)

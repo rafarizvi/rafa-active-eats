@@ -9,9 +9,11 @@ document.getElementById("workoutBtn").addEventListener("click", function () {
 });
 
 let workoutEl = document.getElementById("workout-option")
-workoutEl.addEventListener("change", function(e){
+let favEl = document.getElementById("addedFavBtn")
+ workoutEl.addEventListener("change", function(e){
     let choseWorkout = e.target.value
     getExercises(choseWorkout)
+    favEl.textContent = ""
 })
 
 
@@ -45,7 +47,8 @@ function exercises(workoutData) {
     function randomWorkout(max) {
         return Math.floor(Math.random() * max)        
     }
-let length = randomWorkout(workoutData.length)
+    let length = randomWorkout(workoutData.length)
+
 // these variables are defined by the API data
     if (workoutData[length]) {
         workout = workoutData[length].name
@@ -73,9 +76,18 @@ let length = randomWorkout(workoutData.length)
     document.getElementById("workoutFavBtn").addEventListener("click", function () {
         let workoutElement = document.getElementById('workoutName');
         let workoutText = workoutElement.textContent;
-        workoutElement.textContent = workoutText + ". You have favorited this workout.";
+        workoutElement.textContent = workoutText
         localStorage.setItem('allWorkouts', workoutText);
-    });
+
+        favEl.textContent = ""
+    })
+
+        document.getElementById("workoutFavBtn").addEventListener("click", function () {
+            let favElement = document.getElementById('addedFavBtn');
+             let favText = favElement.textContent;
+            favElement.textContent = favText + " You have favorited this workout.";
+    })
+    
 //When the user saves/favorites the workout, it will go to their favorites page along with the following text for a cleaner look and complete sentence.
     document.getElementById("viewWorkoutFavBtn").addEventListener("click", function () {
         if (workout) {
@@ -95,12 +107,13 @@ let length = randomWorkout(workoutData.length)
         }
     });
 }
+
 //the button will allow the user to go their favorites page at any point when on the main page.
 document.getElementById("viewWorkoutFavBtn").addEventListener("click", function () {
     window.location.replace("favs.html")
 })
 
-// Currently in the works - when the user types in the search bar, it will take data from the API
+// when user types an acitivity in the workout search field it will look for activity in the API
 document.getElementById("searchWorkout").addEventListener("input", function () {
 });
 

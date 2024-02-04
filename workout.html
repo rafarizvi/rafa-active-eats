@@ -9,7 +9,7 @@
   <title>Get Fit Now!</title>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
+      <a class="navbar-brand" href="#">Get Fit Now</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -17,32 +17,12 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link active" aria-current="page" href="https://tamerbekir.github.io/group-project-tbh/">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              Dropdown
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </li>
+            <a class="nav-link" href="https://tamerbekir.github.io/group-project-tbh/favs.html">Favorites</a>
           <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-          </li>
-        </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
+        <form class="d-flex flex-wrap">
         </form>
       </div>
     </div>
@@ -82,11 +62,11 @@
             <input class="form-control my-2" type="search" id="searchWorkout" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success" id="workoutBtn"type="submit">Search</button>
             <select id="workout-option" class="form-select my-2" aria-label="Default select example">
-              <option selected value="" class="my-2">Select Workout</option>
+              <option selected value="" class="my-2">Select Popular Workouts</option>
               <option value="running" id="running">Running</option>
               <option value="walking" id="walking">Walking</option>
               <option value="cycling" id="cycling">Cycling</option>
-              <option value="strength" id="training">Strength Training</option>
+              <option value="training" id="training">Strength Training</option>
               <option value="yoga" id="yoga">Yoga</option>
               <option value="rowing" id="rowing">Rowing</option>
               <option value="hiking" id="hiking">Hiking</option>
@@ -110,6 +90,7 @@
         <div class="card-body">
           <h5 class="card-title">Workouts</h5>
           <p class="card-text" id="workoutName">Workouts Generated here</p>
+          <p class="card-text" id="addedFavBtn"></p>
           <button type="button" id="workoutFavBtn" class="btn btn-primary">Add to favorites</button>
           <button type="button" id="viewWorkoutFavBtn" class="btn btn-primary">View favorites</button>
       </div>
