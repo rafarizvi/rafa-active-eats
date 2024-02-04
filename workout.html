@@ -63,7 +63,7 @@
           <h5 class="card-title">Find Recipes</h5>
           <p class="card-text">Searched Food</p>
           <section class="d-flex flex-wrap">
-            <input class="form-control me-2" type="search" id="searchRecipe" placeholder="Search" aria-label="Search">
+            <input class="form-control me-2" type="search" id="searchRecipe" placeholder="Enter a range: 100-120" aria-label="Search">
             <button class="btn btn-outline-success" id="recipeBtn" type="submit">Search</button>
             <select id="diet-option" class="form-select" aria-label="Default select example">
               <option selected value="">Select Diet</option>
@@ -103,10 +103,15 @@
     </div>
     <!-- Generated recipes -->
     <div class="col">
-      <div class="card all-cards">
-        <div class="card-body displayRecipe">
-          <h5 class="card-title">Searched Food Recipes</h5>
-          <p class="card-text">Food Recipes generated here!</p>
+      <div class="card all-cards d-flex">
+        <div class="card-body displayRecipe d-flex flex-wrap">
+          <div class="col-12">
+            <h5 id="recipeTitle">Searched Food Recipes</h5>
+          </div>
+          <img id="recipeImage"/>
+          <ul id="labelsUl"></ul>
+        </div>
+        <div>
           <button type="button" id="recipeFavsBtn" class="btn btn-primary">Add to Favorites</button>
           <button type="button" id="viewRecipeFavsBtn" class="btn btn-primary">View Favorites</button>
         </div>
@@ -128,6 +133,7 @@
     crossorigin="anonymous"></script>
   <script src="./assets/js/workout.js"></script>
   <script src="./assets/js/recipe.js"></script>
+  <script src="./assets/js/recipeFavs.js"></script>
 
 </body>
 

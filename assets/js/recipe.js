@@ -6,8 +6,11 @@ const dietEl = document.getElementById('diet-option');
 const mealEl = document.getElementById('meal-option');
 
 // recipe display card
-const recipeTitleEl = document.querySelector('.displayRecipe').children[0];
-const recipeTextEl = document.querySelector('.displayRecipe').children[1];
+const displayRecipeDiv = document.querySelector('.displayRecipe');
+const recipeTitleEl = document.getElementById('recipeTitle');
+const recipeTextEl = document.querySelector('.displayRecipe').children[2];
+const imgEl = document.getElementById('recipeImage');
+const ulEl = document.getElementById('labelsUl');
 
 // recipe favorite buttons.
 const favsBtnEl = document.getElementById('recipeFavsBtn');
@@ -15,6 +18,9 @@ const favsViewBtnEl = document.getElementById('viewRecipeFavsBtn');
 
 // search array parameters.
 let searchArr = [false, false, false];
+
+// global variables.
+let recipeUri;
 
 // gets user unput for diet type.
 dietEl.addEventListener('change', function(e) {
@@ -33,8 +39,7 @@ function inputValues() {
     let calorieVal = recipeInputEl.value;
     searchArr.splice(2, 1, calorieVal);
 
-    //selectRecipe(searchArr[0], searchArr[1], searchArr[2]);
-    
+    selectRecipe(searchArr[0], searchArr[1], searchArr[2]);   
 }
 
 // searches for recipe base on calorie input and optional diet type & meal type.
@@ -51,6 +56,7 @@ function selectRecipe(dietType, mealType, calories) {
     // if only calorie is entered.
     } else if (!(searchArr[0] && searchArr[1]) || (searchArr[0] === '' && searchArr[1] === '')) {
         let useUrl = `https://api.edamam.com/api/recipes/v2?type=public&app_id=1dd9ebcd&app_key=28e8360ca293fa5f78e0ef9ab5dbd9d0&calories=${calories}&imageSize=SMALL&imageSize=REGULAR&imageSize=LARGE&random=true`;
+        searchRecipe(useUrl);
     // if diet, meal, and calorie is entered.
     } else {
         let useUrl = `https://api.edamam.com/api/recipes/v2?type=public&app_id=1dd9ebcd&app_key=28e8360ca293fa5f78e0ef9ab5dbd9d0&diet=${dietType}&mealType=${mealType}&calories=${calories}&imageSize=SMALL&imageSize=REGULAR&imageSize=LARGE&random=true`;
@@ -66,22 +72,88 @@ function searchRecipe(recipeUrl) {
         if (response.ok) {
             response.json().then(function(data) {
                 // console.log(data);
-                console.log('recipe2 api works');
-                console.log(data);
-                
-                
+                console.log('recipe api works');
+                console.log(data); 
+                let recipeData = data;  
+                displayInfo(recipeData);  
             })
         } else {
-            alert(`Error: ${response.statusText}`);
+            location.href = "./404.html"
         }
     })
 }
 
+// displays data from API on the page
+function displayInfo(api) {
+    // get required data from api.
+    let recipeName = api.hits[0].recipe.label;
+    let imgElSrc = api.hits[0].recipe.image;
+    let apiCalories = api.hits[0].recipe.calories;
+    let apiServing = api.hits[0].recipe.yield;
+    
+
+    // add content to existing page elements.
+    recipeTitleEl.textContent = recipeName;
+    imgEl.src = imgElSrc;
+
+    // create new elements.
+    const calorieList = document.createElement('li');
+    const totServingList = document.createElement('li');
+    const CalperServingList = document.createElement('li');
+  
 
 
-//selectRecipe(diet, meal, calories);
+    // add values to new elements.
+    calorieList.textContent= `Total Calories: ${Math.round(apiCalories)}`;
+    totServingList.textContent = `Servings: ${Math.round(apiServing)}`;
+    CalperServingList.textContent = `Calories per serving: ${Math.round((apiCalories/apiServing))}`;
+
+
+    // append elements to page.
+    ulEl.appendChild(calorieList);
+    ulEl.appendChild(totServingList);
+    ulEl.appendChild(CalperServingList);
+
+    // appending diet lable requires a for loop due to having multiple values in an array.
+    let dietLabelArr = api.hits[0].recipe.dietLabels;
+
+    if (dietLabelArr.length !== 0) {
+        for (let i = 0; i < dietLabelArr.length; i++) {
+            let dietLabel =  document.createElement('li');
+            dietLabel.textContent = dietLabelArr[i]
+            ulEl.appendChild(dietLabel);
+        }
+    }
+
+    saveRecipe = api.hits[0].recipe;
+
+}
+
+
+let storedRecipes = JSON.parse(localStorage.getItem('savedItems'));
+
+
+// function to add favorites.
+function addFav() {
+
+    let storeRecipesArr;
+    
+    if (storedRecipes !== null) {
+        storeRecipesArr = storedRecipes;
+    } else {
+        storeRecipesArr = [];
+    }
+
+    storeRecipesArr.push(saveRecipe);
+    localStorage.setItem('savedItems', JSON.stringify(storeRecipesArr));
+}
+
 
 // search button event listener.
 recipeSearchBtn.addEventListener('click', inputValues);
+
+favsBtnEl.addEventListener('click', addFav);
+
+
 
 
