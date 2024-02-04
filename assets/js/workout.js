@@ -1,7 +1,6 @@
 //created variables for URL and key
 const workoutUrl = "https://api.api-ninjas.com/v1/caloriesburned?activity="
 const workoutApi = "k163haKKqYGpamQeCQMW4A==hVWwjQzS9u8h36xK"
-let userChoice = ""
 
 
 document.getElementById("workoutBtn").addEventListener("click", function () {
@@ -15,6 +14,8 @@ document.getElementById("workoutBtn").addEventListener("click", function () {
             success: function (result) {
                 console.log(result);
                 exercises(result)
+                addFavoriteWorkout(result)
+                searchWorkout(result)
             },
             error: function ajaxError(jqXHR) {
                 console.error('Error: ', jqXHR.responseText);
@@ -29,6 +30,7 @@ document.getElementById("workoutBtn").addEventListener("click", function () {
 //When clicking on the search bar, the user will get the data appended to the page
 //the variable RUNNING is just for testing purposes. It will be replaced with the TEXT
 //the user enters into the search field.
+
 function exercises(workoutData) {
     let running = workoutData[0].calories_per_hour;
     if (running) {
@@ -43,40 +45,42 @@ function exercises(workoutData) {
 }
 
 
-
 document.getElementById("workoutFavBtn").addEventListener("click", function () {
         let workoutElement = document.getElementById('workoutName');
         let workoutText = workoutElement.textContent;
         localStorage.setItem('storedWorkout', workoutText);
     })
 
-
 let workoutInput = document.createElement("input")
 
-function results() {
-    nameLabel.setAttribute("id", "nameLabel")
-    nameLabel.textContent = "Name: "
-    main.appendChild(nameLabel);
+function addFavoriteWorkout(workoutData) {
+    document.getElementById("viewWorkoutFavBtn").addEventListener("click", function() {
+        let calories = workoutData[0].calories_per_hour;
+        let workout = workoutData[1].name;
+        let lastFave = {
+            workout: "You will be running " + workout,
+            bruning: calories + " Calories"
+        }
+        let storedWorkout = localStorage.getItem("allWorkouts");
+
+        if (storedWorkout === null) {
+            storedWorkout = [];
+        } else {
+            storedWorkout = JSON.parse(storedWorkout);
+        }
+
+        storedWorkout.push(lastFave);
+        let newFav = JSON.stringify(storedWorkout);
+        localStorage.setItem("storedWorkout", newFav);
+        window.location.replace("favs.html");
+    });
+    console.log(addFavoriteWorkout)
 }
 
-// let current = storedData[0].calories_per_hour;
-// let workout = running;
-document.getElementById("viewWorkoutFavBtn").addEventListener("click", function (storedData) {
-    let workout = workoutInput.value
-    let lastFave = {
-        workout: workout,
-        Activity: workout
-    }
-    let allWorkouts = localStorage.getItem("allWorkouts");
-    if (allWorkouts === null) {
-        allWorkouts = []
-    } else {
-        allWorkouts = JSON.parse(allWorkouts)
-    }
 
-    allWorkouts.push(lastFave)
-    let newFav = JSON.stringify(allWorkouts)
-    localStorage.setItem("allWorkouts", newFav)
-    window.location.replace("workoutFavs.html")
-})
-console.log(storedData)
+function searchWorkout() {
+    const locationTitle = document.getElementById('searchWorkout')
+    const location = locationTitle.value;
+    if (location.length > 0) {
+    }
+}

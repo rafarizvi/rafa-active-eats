@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(239, 239, 231);
+    background-color: rgba(235, 211, 53, 0.697);
 }
 
 h1{
@@ -12,7 +12,6 @@ img{
     width: 200px;
     height: 400px;
 }
-
 
 /* stylize image in card */
 .img-style {
@@ -27,6 +26,11 @@ img{
 .all-cards {
     box-shadow: 0px 5px 20px rgb(183, 183, 183);
     min-height: 500px;
+    background-color: rgba(223, 222, 212, 0.569);
+    border-radius: 3%;
 }
 
+.container-fluid{
+    background-color: rgba(235, 211, 53, 0.697);
 
+}
