@@ -29,8 +29,11 @@ function displayFavs(fav) {
             const favTotServing = document.createElement('li');
             const favCalperServing = document.createElement('li');
             
+            // add attributes to new elements.
+            titleDiv.classList.add('col-12', 'fav-Div');
+            imageEl.classList.add('fav-img');
+            
             // add values to new elements.
-            titleDiv.classList.add('col-12');
             titleEl.textContent = favRecipeName;
             imageEl.src = favImgElSrc;
             favCalorie.textContent= `Total Calories: ${Math.round(favCalories)}`;
