@@ -1,36 +1,59 @@
 body{
-    background-color: rgba(235, 211, 53, 0.697);
+    background: rgb(140,207,122);
+    background: linear-gradient(0deg, rgba(140,207,122,0.8480235042735043) 44%, rgba(240,186,71,0.5203881766381766) 72%);
+    font-family: Helvetica, Arial, sans-serif;
+    background-repeat: no-repeat;
 }
 
 h1{
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: Helvetica, Arial, sans-serif;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 8px;
+    color: rgba(3, 2, 2, 0.72);
+    font-weight: 800;
+    font-size: 40px;
+    margin-bottom: 40px;
 }
 
-img{
-    width: 200px;
-    height: 400px;
+h6{
+    text-align: center;
+    margin-bottom: 2%;
+    font-size: 20px;
+}
+
+p{
+    font-size: 20px;
 }
 
 /* stylize image in card */
 .img-style {
-    height: 40%;
-    width: 40%;
+    /* height: 70%; */
+    width: 60%;
     margin: 5px;
-    box-shadow: 0px 0px 20px rgb(183, 183, 183);
-    border-radius: 50px;
+    box-shadow: 0px 18px 20px rgba(117, 119, 116, 0.521);
+    border-radius: 25px;
 }
 
 /* style all cards */
 .all-cards {
-    box-shadow: 0px 5px 20px rgb(183, 183, 183);
+    box-shadow: 0px 8px 20px rgba(43, 44, 40, 0.836);
     min-height: 500px;
     background-color: rgba(223, 222, 212, 0.569);
-    border-radius: 3%;
+    border-radius: 2%;
 }
 
-.container-fluid{
-    background-color: rgba(235, 211, 53, 0.697);
+.navbar-brand span {
+font-weight: 600;
+color:green;
+}
 
+.card-text, .card-title  {
+    color: rgba(3, 2, 2, 0.72);
+}
+
+
+ #workoutFavBtn, #viewWorkoutFavBtn, #foodFavsBtn, #viewFoodFavsBtn, #workoutBtn {
+    color: rgb(255, 255, 255);
+    background-color: rgba(33, 47, 30, 0.668);
+    border: black;
 }
