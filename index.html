@@ -5,48 +5,35 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="./assets/css/style.css">
-  <title>Get Fit Now!</title>
-  <nav class="navbar navbar-expand-lg navbar-light ">
+  <title>Active Eats</title>
+</head>
+
+<header>
+  <nav class="navbar navbar-light">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#"></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-      <a class="navbar-brand" href="#"></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-          </li>
-          <a class="nav-link" href="./favs.html">Favorites</a>
-          <li class="nav-item">
-        <form class="d-flex flex-wrap">
-        </form>
-      </div>
+        <a class="navbar-brand" href="index.html">Home</a>
+        <a class="navbar-brand" href="favs.html">Favorites</a>
     </div>
   </nav>
   <h1>Active Eats</h1>
-   <h6>Welcome to Active Eats. Find recipes to your favorites dishes and find a workout that fits your schedule. Eat good, stay fit.</h6>
-</head>
+  <h6>Welcome to Active Eats. Find recipes to your favorites dishes and find a workout that fits your schedule. Eat good, stay fit.</h6>
+</header>
 
 <body>
   <!-- this layout is for the recipes seached -->
-
   <div class="row row-cols-1 row-cols-md-2 g-4">
     <div class="col">
       <div class="card all-cards">
-        <img
+        <img class="img-style"
           src="https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/health/wp-content/uploads/2022/01/foods_to_eat_to_lose_weight.jpeg"
           class="rounded mx-auto d-block img-style" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Find Recipes</h5>
-          <p class="card-text">Searched Food</p>
+        <div class="card-body rec-select">
+          <h5 class="card-title">Search Recipes</h5>
+          <p class="card-text">Search a recipe of you choice, and select optional criteria from the drop down below.</p>
           <section class="d-flex flex-wrap">
-            <input class="form-control me-2" type="search" id="searchRecipe" placeholder="Enter a range: 100-120" aria-label="Search">
+            <input class="form-control me-2 my-2" type="search" id="searchRecipe" placeholder="Enter a calorie range: (ie. 100-120)" aria-label="Search">
             <button class="btn btn-outline-success" id="recipeBtn" type="submit">Search</button>
-            <select id="diet-option" class="form-select" aria-label="Default select example">
+            <select id="diet-option" class="form-select me-2 my-2" aria-label="Default select example">
               <option selected value="">Select Diet</option>
               <option value="balanced">balanced</option>
               <option value="high-fiber">high-fiber</option>
@@ -55,7 +42,7 @@
               <option value="low-fat">low-fat</option>
               <option value="low-sodium">low-sodium</option>
             </select>
-            <select id="meal-option" class="form-select" aria-label="Default select example">
+            <select id="meal-option" class="form-select me-2  my-2" aria-label="Default select example">
               <option selected value="">Select Meal</option>
               <option value="Breakfast">Breakfast</option>
               <option value="Dinner">Dinner</option>
@@ -66,10 +53,10 @@
         </div>
       </div>
     </div>
-    <!-- this layout is for workoutsearched -->
+    <!-- this section is for workoutsearched -->
     <div class="col">
       <div class="card all-cards">
-        <img
+        <img class="img-style" id="workout-img"
           src="https://img.freepik.com/free-photo/dumbbells-floor-gym-ai-generative_123827-23744.jpg?size=626&ext=jpg&ga=GA1.1.1448711260.1706572800&semt=ais"
           class="rounded mx-auto d-block img-style" alt="...">
         <div class="card-body">
@@ -97,12 +84,12 @@
       <div class="card all-cards d-flex">
         <div class="card-body displayRecipe d-flex flex-wrap">
           <div class="col-12">
-            <h5 id="recipeTitle">Searched Food Recipes</h5>
+            <h5 id="recipeTitle">Recipes</h5>
           </div>
           <img id="recipeImage"/>
-          <ul id="labelsUl"></ul>
+          <div id="UlDiv"></div>
         </div>
-        <div>
+        <div class="recipe-btns">
           <button type="button" id="recipeFavsBtn" class="btn btn-primary">Add to Favorites</button>
           <button type="button" id="viewRecipeFavsBtn" class="btn btn-primary">View Favorites</button>
         </div>
@@ -124,7 +111,5 @@
     crossorigin="anonymous"></script>
   <script src="./assets/js/workout.js"></script>
   <script src="./assets/js/recipe.js"></script>
-  <script src="./assets/js/recipeFavs.js"></script>
-
 </body>
 </html>
