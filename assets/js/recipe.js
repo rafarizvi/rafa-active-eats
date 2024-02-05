@@ -90,6 +90,7 @@ function displayInfo(api) {
     let imgElSrc = api.hits[0].recipe.image;
     let apiCalories = api.hits[0].recipe.calories;
     let apiServing = api.hits[0].recipe.yield;
+    let getRecipe = api.hits[0].recipe.url;
     
 
     // add content to existing page elements.
@@ -100,6 +101,8 @@ function displayInfo(api) {
     const calorieList = document.createElement('li');
     const totServingList = document.createElement('li');
     const CalperServingList = document.createElement('li');
+    const extUrl = document.createElement('li');
+    const aref = document.createElement('a');
   
 
 
@@ -107,12 +110,18 @@ function displayInfo(api) {
     calorieList.textContent= `Total Calories: ${Math.round(apiCalories)}`;
     totServingList.textContent = `Servings: ${Math.round(apiServing)}`;
     CalperServingList.textContent = `Calories per serving: ${Math.round((apiCalories/apiServing))}`;
-
+    aref.href = getRecipe;
+    aref.innerHTML = 'Instructions'
 
     // append elements to page.
+    extUrl.appendChild(aref);
+
     ulEl.appendChild(calorieList);
     ulEl.appendChild(totServingList);
     ulEl.appendChild(CalperServingList);
+    ulEl.appendChild(extUrl);
+
+
 
     // appending diet lable requires a for loop due to having multiple values in an array.
     let dietLabelArr = api.hits[0].recipe.dietLabels;
@@ -130,12 +139,10 @@ function displayInfo(api) {
 }
 
 
-let storedRecipes = JSON.parse(localStorage.getItem('savedItems'));
-
-
 // function to add favorites.
 function addFav() {
-
+    
+    let storedRecipes = JSON.parse(localStorage.getItem('savedItems'));
     let storeRecipesArr;
     
     if (storedRecipes !== null) {
@@ -146,13 +153,17 @@ function addFav() {
 
     storeRecipesArr.push(saveRecipe);
     localStorage.setItem('savedItems', JSON.stringify(storeRecipesArr));
+    console.log(storeRecipesArr);
 }
-
 
 // search button event listener.
 recipeSearchBtn.addEventListener('click', inputValues);
 
 favsBtnEl.addEventListener('click', addFav);
+
+favsViewBtnEl.addEventListener('click', function() {
+    location.href = './Favs.html';
+});
 
 
 
