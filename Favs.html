@@ -24,23 +24,49 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="index.html">Home</a>
           </li>
-          <a class="nav-link" href="favs.html">Favorites</a>
           <li class="nav-item">
           </li>
+          <h1>Favorites</h1>
         </ul>
       </div>
     </div>
   </nav>
-  <section id="wrapper">
-    <h1>Favorites</h1>
-    <section id="allFavorites"></section>
-    <div id="favoritesContainer"></div>
-    <!-- user will be able to go back to main HTML, clear stats  -->
-    <button id="goBack" onclick="history.go(-1)">Go Back</button>
-    <button id="clear" value="reset">Reset Favorites</button>
-  </section>
-  </section>
-  <script src="./assets/js/favs.js"></script>
+  
+  <!-- Recipe favorites section -->
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Recipe Favorites</h5>
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <section>
+            <div>
+              <div class="card-body displayFav d-flex flex-wrap">
+              </div>
+          </section>
+        </div>
+      </div>
+    </div>
+    <!-- Workout favorites section -->
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Workout Favorites</h5>
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <section id="wrapper">
+            <section id="allFavorites"></section>
+            <div id="favoritesContainer"></div>
+            <!-- user will be able to go back to main HTML, clear stats  -->
+            <button id="goBack" onclick="history.go(-1)">Go Back</button>
+            <button id="clear" value="reset">Reset Favorites</button>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./assets/js/workoutFavs.js"></script>
+  <script src="./assets/js/recipeFavs.js"></script>
 </body>
 
 </html>

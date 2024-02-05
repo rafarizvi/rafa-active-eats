@@ -43,9 +43,25 @@
         <div class="card-body">
           <h5 class="card-title">Find Recipes</h5>
           <p class="card-text">Searched Food</p>
-          <section class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
+          <section class="d-flex flex-wrap">
+            <input class="form-control me-2" type="search" id="searchRecipe" placeholder="Enter a range: 100-120" aria-label="Search">
+            <button class="btn btn-outline-success" id="recipeBtn" type="submit">Search</button>
+            <select id="diet-option" class="form-select" aria-label="Default select example">
+              <option selected value="">Select Diet</option>
+              <option value="balanced">balanced</option>
+              <option value="high-fiber">high-fiber</option>
+              <option value="high-protein">high-protein</option>
+              <option value="low-carb">low-carb</option>
+              <option value="low-fat">low-fat</option>
+              <option value="low-sodium">low-sodium</option>
+            </select>
+            <select id="meal-option" class="form-select" aria-label="Default select example">
+              <option selected value="">Select Meal</option>
+              <option value="Breakfast">Breakfast</option>
+              <option value="Dinner">Dinner</option>
+              <option value="Lunch">Lunch</option>
+              <option value="Snack">Snack</option>
+            </select>
           </section>
         </div>
       </div>
@@ -76,16 +92,23 @@
         </div>
       </div>
     </div>
+    <!-- Generated recipes -->
     <div class="col">
-      <div class="card all-cards">
-        <div class="card-body">
-          <h5 class="card-title">Food Recipes</h5>
-          <p class="card-text"></p>
-          <button type="button" id="foodFavsBtn" class="btn btn-primary">Add to Favorites</button>
-          <button type="button" id="viewFoodFavsBtn" class="btn btn-primary">View Favorites</button>
+      <div class="card all-cards d-flex">
+        <div class="card-body displayRecipe d-flex flex-wrap">
+          <div class="col-12">
+            <h5 id="recipeTitle">Searched Food Recipes</h5>
+          </div>
+          <img id="recipeImage"/>
+          <ul id="labelsUl"></ul>
+        </div>
+        <div>
+          <button type="button" id="recipeFavsBtn" class="btn btn-primary">Add to Favorites</button>
+          <button type="button" id="viewRecipeFavsBtn" class="btn btn-primary">View Favorites</button>
         </div>
       </div>
     </div>
+    <!-- Generated workouts -->
     <div class="col">
       <div class="card all-cards">
         <div class="card-body">
@@ -100,6 +123,8 @@
   <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
     crossorigin="anonymous"></script>
   <script src="./assets/js/workout.js"></script>
+  <script src="./assets/js/recipe.js"></script>
+  <script src="./assets/js/recipeFavs.js"></script>
 
 </body>
 </html>
