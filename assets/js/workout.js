@@ -10,7 +10,7 @@ document.getElementById("workoutBtn").addEventListener("click", function () {
 
 let workoutEl = document.getElementById("workout-option")
 let favEl = document.getElementById("addedFavBtn")
- workoutEl.addEventListener("change", function(e){
+workoutEl.addEventListener("change", function (e) {
     let choseWorkout = e.target.value
     getExercises(choseWorkout)
     favEl.textContent = ""
@@ -45,22 +45,24 @@ function exercises(workoutData) {
 
     //user will get a generated workout at random when searching for a workout
     function randomWorkout(max) {
-        return Math.floor(Math.random() * max)        
+        return Math.floor(Math.random() * max)
     }
     let length = randomWorkout(workoutData.length)
 
-// these variables are defined by the API data
+    // these variables are defined by the API data
     if (workoutData[length]) {
         workout = workoutData[length].name
         workoutDuration = workoutData[length].duration_minutes;
         calories = workoutData[length].calories_per_hour;
-//the activity will append on the page after the user searches for it and will included text to make the sentence more complete and concise.
+
+
+        //the activity will append on the page after the user searches for it and will included text to make the sentence more complete and concise.
         let activity = [
             "This workout will include " + workout,
             " for " + workoutDuration + " minutes",
             " which will burn " + calories + " total calories."
         ];
-//The activity, time and calories will append from this if statement and append to the page for the user to see
+        //The activity, time and calories will append from this if statement and append to the page for the user to see
         if (activity) {
             const workoutChoice = activity;
             const workoutChoiceEl = document.createElement('p');
@@ -71,8 +73,8 @@ function exercises(workoutData) {
             console.log(activity);
         }
     }
-//when the user clicks on the workoutFav butto, the users generated workout will go to local storage
-//and append to their favorites page. The workout they saved will stay there until they decide to clear it
+    //when the user clicks on the workoutFav butto, the users generated workout will go to local storage
+    //and append to their favorites page. The workout they saved will stay there until they decide to clear it
     document.getElementById("workoutFavBtn").addEventListener("click", function () {
         let workoutElement = document.getElementById('workoutName');
         let workoutText = workoutElement.textContent;
@@ -82,13 +84,13 @@ function exercises(workoutData) {
         favEl.textContent = ""
     })
 
-        document.getElementById("workoutFavBtn").addEventListener("click", function () {
-            let favElement = document.getElementById('addedFavBtn');
-             let favText = favElement.textContent;
-            favElement.textContent = favText + " You have favorited this workout.";
+    document.getElementById("workoutFavBtn").addEventListener("click", function () {
+        let favElement = document.getElementById('addedFavBtn');
+        let favText = favElement.textContent;
+        favElement.textContent = favText + " You have favorited this workout.";
     })
-    
-//When the user saves/favorites the workout, it will go to their favorites page along with the following text for a cleaner look and complete sentence.
+
+    //When the user saves/favorites the workout, it will go to their favorites page along with the following text for a cleaner look and complete sentence.
     document.getElementById("viewWorkoutFavBtn").addEventListener("click", function () {
         if (workout) {
             let lastFave = {
@@ -96,10 +98,10 @@ function exercises(workoutData) {
                 workoutDuration: " for " + workoutDuration + " minutes",
                 bruning: ", burning a total of " + calories + " calories."
             };
-//The user will have their activity with the API be pushed to the local storage.
+            //The user will have their activity with the API be pushed to the local storage.
             let storedWorkout = localStorage.getItem("storedWorkout") || "[]";
             storedWorkout = JSON.parse(storedWorkout);
-//the data from the local storage will also take the users last favorited activity and move it to the favorites HTML page and the page will also change to at the same time
+            //the data from the local storage will also take the users last favorited activity and move it to the favorites HTML page and the page will also change to at the same time
             storedWorkout.push(lastFave);
             let newFav = JSON.stringify(storedWorkout);
             localStorage.setItem("storedWorkout", newFav);

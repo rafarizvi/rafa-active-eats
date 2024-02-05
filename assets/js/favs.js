@@ -8,8 +8,9 @@ clear.addEventListener("click", function () {
 });
 
 goBack.addEventListener("click", function () {
-    window.location.replace("workout.html");
+    window.location.replace("index.html");
 });
+
 storedWorkout = JSON.parse(storedWorkout);
 
 if (storedWorkout !== null) {
