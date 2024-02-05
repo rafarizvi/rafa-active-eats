@@ -133,7 +133,7 @@ h5 {
     border-top: solid 1px rgba(3, 2, 2, 0.312);
 }
 
-#wrapper {
+#wrapper, .recipe-section {
     margin-top: 44px;
     padding-top: 10px;
     border-top: solid 1px rgba(3, 2, 2, 0.312);

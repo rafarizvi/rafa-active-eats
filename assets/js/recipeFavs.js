@@ -2,6 +2,7 @@
 
 
 const favDisplay = document.querySelector('.displayFav');
+const recipeSection = document.getElementById('recipe-section-id');
 
 let storedFavRecipes = JSON.parse(localStorage.getItem('savedItems'));
 
@@ -9,6 +10,10 @@ let storedFavRecipes = JSON.parse(localStorage.getItem('savedItems'));
 function displayFavs(fav) {
     // function runs only if local storage contains value(s).
     if (fav !== null) {
+
+        // removed border-top on favs page.
+        recipeSection.classList.remove('recipe-section');
+        
         for (let i = 0; i < fav.length; i++){
             // get required data from api.
             let favRecipeName = fav[i].label;
@@ -73,8 +78,5 @@ function displayFavs(fav) {
 
 }
 
-
 displayFavs(storedFavRecipes);
-
-
 
