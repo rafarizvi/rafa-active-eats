@@ -2,6 +2,8 @@ body{
     background: rgb(140,207,122);
     background: linear-gradient(0deg, rgba(140,207,122,0.8480235042735043) 44%, rgba(240,186,71,0.5203881766381766) 72%);
     font-family: Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    line-height: 1.5;
     background-repeat: no-repeat;
 }
 
@@ -19,6 +21,7 @@ h6{
     text-align: center;
     margin-bottom: 2%;
     font-size: 20px;
+    color: rgba(3, 2, 2, 0.72);
 }
 
 p{
@@ -27,19 +30,25 @@ p{
 
 /* stylize image in card */
 .img-style {
-    /* height: 70%; */
     width: 60%;
     margin: 5px;
     box-shadow: 0px 18px 20px rgba(117, 119, 116, 0.521);
-    border-radius: 25px;
+    border-radius: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#workout-img {
+    margin-bottom: 15px;
 }
 
 /* style all cards */
-.all-cards {
+.all-cards, .fav-cards {
     box-shadow: 0px 8px 20px rgba(43, 44, 40, 0.836);
-    min-height: 500px;
+    min-height: 610px;
     background-color: rgba(223, 222, 212, 0.569);
-    border-radius: 2%;
+    border-radius: 15px;
+    padding: 10px;
 }
 
 .navbar-brand span {
@@ -52,8 +61,81 @@ color:green;
 }
 
 
- #workoutFavBtn, #viewWorkoutFavBtn, #foodFavsBtn, #viewFoodFavsBtn, #workoutBtn {
+ #workoutFavBtn, #viewWorkoutFavBtn, #recipeFavsBtn, #viewRecipeFavsBtn, #workoutBtn, #recipeBtn {
     color: rgb(255, 255, 255);
-    background-color: rgba(33, 47, 30, 0.668);
+    background-color: rgba(35, 53, 32, 0.668);
     border: black;
 }
+
+.fav-btn-div {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+#goBack, #clear {
+    width: 200px;
+    height:35px;
+    margin: 3px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgba(20, 71, 54, 0.681);
+    color: rgb(255, 255, 255);  
+}
+
+#workoutFavBtn:hover, #viewWorkoutFavBtn:hover, #recipeFavsBtn:hover, #viewRecipeFavsBtn:hover, 
+#workoutBtn:hover , #recipeBtn:hover , #goBack:hover , #clear:hover{
+    background-color: rgba(14, 109, 78, 0.776);
+    box-shadow: 0px 4px 10px rgba(43, 44, 40, 0.836);
+}
+
+.navbar-brand {
+    font-size: 22px;
+    text-align: center;
+    width: 120px;
+    height:36px;
+    border: solid 1px rgba(35, 53, 32, 0.668);
+    border-radius: 10px;
+    padding-top: 0;
+    margin: 3px;
+}
+
+li {
+    font-size: 20px;
+    color: rgba(3, 2, 2, 0.72);
+}
+
+#recipeImage {
+    height: 350px;
+    width: 350px;
+    border-radius: 15px;
+}
+
+.fav-img {
+    height: 300px;
+    width: 300px;
+    border-radius: 15px;
+    box-shadow: 0px 2px 5px rgba(43, 44, 40, 0.836);
+}
+
+.recipe-btns {
+    margin: auto auto 30px 17px;
+}
+
+h5 {
+    text-align: center;
+    font-size: x-large;
+    font-weight: 350;
+}
+
+.fav-Div {
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: solid 1px rgba(3, 2, 2, 0.312);
+}
+
+#wrapper, .recipe-section {
+    margin-top: 44px;
+    padding-top: 10px;
+    border-top: solid 1px rgba(3, 2, 2, 0.312);
+}
+

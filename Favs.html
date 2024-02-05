@@ -11,35 +11,27 @@
   <title>Favorites</title>
 </head>
 
-<body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light ">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#"></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-          </li>
-          <li class="nav-item">
-          </li>
-          <h1>Favorites</h1>
-        </ul>
-      </div>
+      <a class="navbar-brand" href="index.html">Home</a>
     </div>
   </nav>
+  <h1>Favorites</h1>
+  <!-- user will be able to go back to main HTML, clear stats  -->
+  <div class="fav-btn-div">
+    <button id="goBack" onclick="history.go(-1)">Go Back</button>
+    <button id="clear" value="reset">Reset Favorites</button>
+  </div>
+</header>
   
   <!-- Recipe favorites section -->
   <div class="row">
     <div class="col-sm-6">
-      <div class="card">
+      <div class="card fav-cards">
         <div class="card-body">
           <h5 class="card-title">Recipe Favorites</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <section>
+          <section id="recipe-section-id" class="recipe-section">
             <div>
               <div class="card-body displayFav d-flex flex-wrap">
               </div>
@@ -49,16 +41,12 @@
     </div>
     <!-- Workout favorites section -->
     <div class="col-sm-6">
-      <div class="card">
+      <div class="card fav-cards">
         <div class="card-body">
           <h5 class="card-title">Workout Favorites</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
           <section id="wrapper">
             <section id="allFavorites"></section>
             <div id="favoritesContainer"></div>
-            <!-- user will be able to go back to main HTML, clear stats  -->
-            <button id="goBack" onclick="history.go(-1)">Go Back</button>
-            <button id="clear" value="reset">Reset Favorites</button>
           </section>
         </div>
       </div>

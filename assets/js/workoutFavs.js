@@ -1,6 +1,7 @@
 let storedWorkout = localStorage.getItem("storedWorkout");
 let newFav = document.getElementById("allFavorites");
 let clear = document.querySelector("#clear");
+let goBack = document.querySelector("#goBack");
 
 clear.addEventListener("click", function () {
     localStorage.clear();

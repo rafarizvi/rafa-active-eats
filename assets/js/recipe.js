@@ -10,7 +10,7 @@ const displayRecipeDiv = document.querySelector('.displayRecipe');
 const recipeTitleEl = document.getElementById('recipeTitle');
 const recipeTextEl = document.querySelector('.displayRecipe').children[2];
 const imgEl = document.getElementById('recipeImage');
-const ulEl = document.getElementById('labelsUl');
+const ulDiv = document.getElementById('UlDiv');
 
 // recipe favorite buttons.
 const favsBtnEl = document.getElementById('recipeFavsBtn');
@@ -43,6 +43,7 @@ function inputValues() {
 }
 
 // searches for recipe base on calorie input and optional diet type & meal type.
+// the included random parameter is used in the api's url, which randomizes the response.
 function selectRecipe(dietType, mealType, calories) {    
 
     // if only diet is selected and calorie is entered.
@@ -64,9 +65,8 @@ function selectRecipe(dietType, mealType, calories) {
     }    
 }
 
-
+// provides url based on the above if statement to the fetch function.
 function searchRecipe(recipeUrl) {
-    
     fetch(recipeUrl)
     .then(function(response) {
         if (response.ok) {
@@ -85,6 +85,10 @@ function searchRecipe(recipeUrl) {
 
 // displays data from API on the page
 function displayInfo(api) {
+
+    // removes previousely appended elements.
+    ulDiv.innerHTML = '';
+
     // get required data from api.
     let recipeName = api.hits[0].recipe.label;
     let imgElSrc = api.hits[0].recipe.image;
@@ -92,19 +96,17 @@ function displayInfo(api) {
     let apiServing = api.hits[0].recipe.yield;
     let getRecipe = api.hits[0].recipe.url;
     
-
     // add content to existing page elements.
     recipeTitleEl.textContent = recipeName;
     imgEl.src = imgElSrc;
 
     // create new elements.
+    const dataUl = document.createElement('ul')
     const calorieList = document.createElement('li');
     const totServingList = document.createElement('li');
     const CalperServingList = document.createElement('li');
     const extUrl = document.createElement('li');
     const aref = document.createElement('a');
-  
-
 
     // add values to new elements.
     calorieList.textContent= `Total Calories: ${Math.round(apiCalories)}`;
@@ -115,13 +117,10 @@ function displayInfo(api) {
 
     // append elements to page.
     extUrl.appendChild(aref);
-
-    ulEl.appendChild(calorieList);
-    ulEl.appendChild(totServingList);
-    ulEl.appendChild(CalperServingList);
-    ulEl.appendChild(extUrl);
-
-
+    dataUl.appendChild(calorieList);
+    dataUl.appendChild(totServingList);
+    dataUl.appendChild(CalperServingList);
+    dataUl.appendChild(extUrl);
 
     // appending diet lable requires a for loop due to having multiple values in an array.
     let dietLabelArr = api.hits[0].recipe.dietLabels;
@@ -130,14 +129,15 @@ function displayInfo(api) {
         for (let i = 0; i < dietLabelArr.length; i++) {
             let dietLabel =  document.createElement('li');
             dietLabel.textContent = dietLabelArr[i]
-            ulEl.appendChild(dietLabel);
+            dataUl.appendChild(dietLabel);
         }
     }
 
+    ulDiv.appendChild(dataUl);
+
+    // updates the global variable, which is used in the add favorites function.
     saveRecipe = api.hits[0].recipe;
-
 }
-
 
 // function to add favorites.
 function addFav() {
@@ -164,7 +164,4 @@ favsBtnEl.addEventListener('click', addFav);
 favsViewBtnEl.addEventListener('click', function() {
     location.href = './Favs.html';
 });
-
-
-
 
