@@ -12,7 +12,7 @@
   <nav class="navbar navbar-light">
     <div class="container-fluid">
         <a class="navbar-brand" href="index.html">Home</a>
-        <a class="navbar-brand" href="favs.html">Favorites</a>
+        <a class="navbar-brand" href="Favs.html">Favorites</a>
     </div>
   </nav>
   <h1>Active Eats</h1>
@@ -63,7 +63,7 @@
           <h5 class="card-title">Search Workouts</h5>
           <p class="card-text">Search for the workout of your choice, or pick from one of the popular workouts in the drop down below.</p>
           <section class="d-flex flex-wrap">
-            <input class="form-control my-2" type="search" id="searchWorkout" placeholder="Search" aria-label="Search">
+            <input class="form-control my-2" type="search" id="searchWorkout" placeholder="Search workout" aria-label="Search">
             <button class="btn btn-outline-success" id="workoutBtn"type="submit">Search</button>
             <select id="workout-option" class="form-select my-2" aria-label="Default select example">
               <option selected value="" class="my-2">Select Popular Workouts</option>
@@ -101,14 +101,17 @@
         <div class="card-body">
           <h5 class="card-title">Workouts</h5>
           <p class="card-text" id="workoutName"></p>
+          <img id="workoutImage">
           <p class="card-text" id="addedFavBtn"></p>
           <button type="button" id="workoutFavBtn" class="btn btn-primary">Add to favorites</button>
           <button type="button" id="viewWorkoutFavBtn" class="btn btn-primary">View favorites</button>
+            <!-- <p id="workoutImage"> </p> -->
       </div>
     </div>
   </div>
   <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
     crossorigin="anonymous"></script>
+
   <script src="./assets/js/workout.js"></script>
   <script src="./assets/js/recipe.js"></script>
 </body>
