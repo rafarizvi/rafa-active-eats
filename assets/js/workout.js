@@ -105,14 +105,14 @@ function exercises(workoutData) {
             storedWorkout.push(lastFave);
             let newFav = JSON.stringify(storedWorkout);
             localStorage.setItem("storedWorkout", newFav);
-            window.location.replace("favs.html");
+            window.href="./Favs.html";
         }
     });
 }
 
 //the button will allow the user to go their favorites page at any point when on the main page.
 document.getElementById("viewWorkoutFavBtn").addEventListener("click", function () {
-    window.location.replace("favs.html")
+    window.location.replace("Favs.html")
 })
 
 // when user types an acitivity in the workout search field it will look for activity in the API
