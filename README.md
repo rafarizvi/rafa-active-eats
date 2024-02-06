@@ -41,7 +41,6 @@ I want an application that is efficient and can provide me a solution for findin
 <a href="https://www.menshealth.com/fitness/a19530279/resistance-training-to-build-muscle/">Training</a><br>
 <a href="https://www.menshealth.com/uk/health/a39726399/cyclists-live-longer-study/">Cycling</a><br>
 <a href="https://www.pexels.com/search/yoga/">Yoga</a><br>
-<a href="https://www.pexels.com/search/yoga/">Yoga</a><br>
 <a href="https://www.menshealth.com/uk/fitness/a758565/this-20-minute-rowing-workout-strips-fat-and-builds-lean-muscle/">Rowing</a><br>
 
 
