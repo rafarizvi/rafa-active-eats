@@ -151,9 +151,11 @@ function addFav() {
         storeRecipesArr = [];
     }
 
-    // added to favorite message.
-    const favMsg = document.getElementById('fav-msg');
-    favMsg.classList.toggle('hidden');
+    // added to favorite message. Only runs if a value is stored in saveRecipe variable.
+    if (saveRecipe !== undefined) {
+        const favMsg = document.getElementById('fav-msg');
+        favMsg.classList.toggle('hidden');
+    }
 
     // adds to favorite.
     storeRecipesArr.push(saveRecipe);

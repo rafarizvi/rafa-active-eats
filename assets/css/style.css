@@ -4,6 +4,8 @@ body{
     font-family: Helvetica, Arial, sans-serif;
     font-weight: 300;
     line-height: 1.5;
+    max-width: 1500px;
+    margin: auto;
     background-repeat: no-repeat;
 }
 
@@ -56,10 +58,9 @@ font-weight: 600;
 color:green;
 }
 
-.card-text, .card-title  {
+.card-text, .card-title, #recipeTitle {
     color: rgba(3, 2, 2, 0.72);
 }
-
 
  #workoutFavBtn, #viewWorkoutFavBtn, #recipeFavsBtn, #viewRecipeFavsBtn, #workoutBtn, #recipeBtn {
     color: rgb(255, 255, 255);
@@ -105,8 +106,8 @@ li {
 }
 
 #recipeImage {
-    height: 350px;
-    width: 350px;
+    height: 320px;
+    width: 320px;
     border-radius: 15px;
 }
 
