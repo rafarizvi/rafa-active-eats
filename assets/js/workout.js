@@ -2,9 +2,40 @@
 //when the user clicks on the search button, the API will generate data and search for the activity they
 //entered into the text/search field
 
+function searchWorkout(workoutImg){
+    let workoutImageElement = document.getElementById("workoutImage")
+    if (workoutImg == "running") {
+        workoutImageElement.src = "./assets/images/running.jpeg"
+    }
+    if (workoutImg == "walking") {
+        workoutImageElement.src = "./assets/images/walking.jpeg"
+    }
+    if (workoutImg == "cycling") {
+        workoutImageElement.src = "./assets/images/cycling.jpeg"
+    }
+    if (workoutImg == "training") {
+        workoutImageElement.src = "./assets/images/strength.jpeg"
+    }
+    if (workoutImg == "yoga") {
+        workoutImageElement.src = "./assets/images/yoga.jpeg"
+    }
+    if (workoutImg == "rowing") {
+        workoutImageElement.src = "./assets/images/rowing.jpeg"
+    }
+    if (workoutImg == "hiking") {
+        workoutImageElement.src = "./assets/images/hiking.jpeg"
+    }
+    if (workoutImg == "wheelchair") {
+        workoutImageElement.src = "./assets/images/wheelchair.jpeg"
+    }
+    console.log(searchWorkout)
+}
+
+
 document.getElementById("workoutBtn").addEventListener("click", function () {
     let searchedWorkout = document.getElementById("searchWorkout").value;
     getExercises(searchedWorkout);
+    searchWorkout(searchedWorkout)
     console.log("button click to pull API working");
 });
 
@@ -13,9 +44,9 @@ let favEl = document.getElementById("addedFavBtn")
 workoutEl.addEventListener("change", function (e) {
     let choseWorkout = e.target.value
     getExercises(choseWorkout)
+    searchWorkout(choseWorkout)
     favEl.textContent = ""
 })
-
 
 function getExercises(searchedWorkout) {
     //the API and the key. Used searchedWorkout as a variable to complete the URL with the user seached activity
@@ -54,7 +85,9 @@ function exercises(workoutData) {
         workout = workoutData[length].name
         workoutDuration = workoutData[length].duration_minutes;
         calories = workoutData[length].calories_per_hour;
-
+    } else { 
+        location.href = "./404.html"
+    }
 
         //the activity will append on the page after the user searches for it and will included text to make the sentence more complete and concise.
         let activity = [
@@ -71,7 +104,6 @@ function exercises(workoutData) {
             workoutChoiceElSection.innerHTML = '';
             workoutChoiceElSection.appendChild(workoutChoiceEl);
             console.log(activity);
-        }
     }
     //when the user clicks on the workoutFav butto, the users generated workout will go to local storage
     //and append to their favorites page. The workout they saved will stay there until they decide to clear it
@@ -80,7 +112,6 @@ function exercises(workoutData) {
         let workoutText = workoutElement.textContent;
         workoutElement.textContent = workoutText
         localStorage.setItem('allWorkouts', workoutText);
-
         favEl.textContent = ""
     })
 
@@ -89,7 +120,6 @@ function exercises(workoutData) {
         let favText = favElement.textContent;
         favElement.textContent = favText + " You have favorited this workout.";
     })
-
     //When the user saves/favorites the workout, it will go to their favorites page along with the following text for a cleaner look and complete sentence.
     document.getElementById("viewWorkoutFavBtn").addEventListener("click", function () {
         if (workout) {
