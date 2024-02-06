@@ -34,7 +34,9 @@ https://api-ninjas.com/api/exercises<br><br>
 
 ## ScreenShot
 ![Web screenshot](screencapture-tamerbekir-github-io-active-eats-Favs-html-2024-02-05-19_44_52.png)<br><br>
-![Web screenshot](screencapture-tamerbekir-github-io-active-eats-2024-02-05-19_39_48.png)<br><br>
+![Web screenshot](screen shot active eats homepage.jpg)<br><br>
+
+
 
 
 
