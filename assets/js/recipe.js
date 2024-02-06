@@ -42,7 +42,7 @@ function inputValues() {
     selectRecipe(searchArr[0], searchArr[1], searchArr[2]);   
 }
 
-// searches for recipe base on calorie input and optional diet type & meal type.
+// searches for recipe based on calorie input and optional diet type & meal type.
 // the included random parameter is used in the api's url, which randomizes the response.
 function selectRecipe(dietType, mealType, calories) {    
 
@@ -151,6 +151,11 @@ function addFav() {
         storeRecipesArr = [];
     }
 
+    // added to favorite message.
+    const favMsg = document.getElementById('fav-msg');
+    favMsg.classList.toggle('hidden');
+
+    // adds to favorite.
     storeRecipesArr.push(saveRecipe);
     localStorage.setItem('savedItems', JSON.stringify(storeRecipesArr));
     console.log(storeRecipesArr);
@@ -162,6 +167,8 @@ recipeSearchBtn.addEventListener('click', inputValues);
 favsBtnEl.addEventListener('click', addFav);
 
 favsViewBtnEl.addEventListener('click', function() {
+
     location.href = './Favs.html';
+
 });
 

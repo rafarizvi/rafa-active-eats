@@ -139,3 +139,6 @@ h5 {
     border-top: solid 1px rgba(3, 2, 2, 0.312);
 }
 
+.hidden {
+    display: none;
+}
