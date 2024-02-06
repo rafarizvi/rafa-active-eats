@@ -10,45 +10,50 @@ You will then be provided instructions and important information for your workou
 After being provided with this information users will have the ability to save there favorite receipes and exercises with the Add to favorites button.You can access your favorites via the Favorites tab at the top right of the application.<br><br> 
 
  
-## The Goal
+# The Goal
 The goal of this application is to provide users with a comprehesive list of excercises targeting every major muscle group.<br><br>
 As well as providing a full analysis of food receipes that compliment your choice of exercise.<br><br>
 Users that have a busy schedule can use this application to get ahead and pre plan there day and save time through out there busy schedule.
 
-## User Story 
+# User Story 
 As an active person with a busy schedule<br><br> 
 I want an application that can generate meals and a workout for me without losing any valuable time.<br><br>
 As a person having issues with finding a good diet<br> <br>
 I want an application that is efficient and can provide me a solution for finding a diet that fits me.<br><br>
 
-## Deployed Link 
-https://tamerbekir.github.io/active-eats/<br><br>
-<br>
-## Active Eats Repository
-https://github.com/Tamerbekir/active-eats<br><br>
-<br>
+# Deployed Link 
+<a href="https://tamerbekir.github.io/active-eats/">Active Eats</a>
 
-## API Links
- https://developer.edamam.com/edamam-nutrition-api<br><br>
- https://api-ninjas.com/api/exercises<br><br>
- <br>
+# Active Eats Repository
+<a href="https://github.com/Tamerbekir/active-eats">Active Eats Repo</a>
 
 
-## Image Credits
-https://www.freepik.com/photos/gym-wallpaper<br><br>
-https://www.prevention.com/food-nutrition/healthy-eating/g33416014/heart-healthy-food-wd/<br><br>
-https://mainafinance.medium.com/unlock-your-full-potential-10-best-wheelchair-exercises-for-a-strong-and-fit-body-5b3608ad8654<br><br>
-https://www.menshealth.com/fitness/a19530279/resistance-training-to-build-muscle/<br><br>
-https://www.menshealth.com/uk/health/a39726399/cyclists-live-longer-study/<br><br>
-https://www.pexels.com/search/yoga/<br><br>
-https://www.menshealth.com/uk/fitness/a758565/this-20-minute-rowing-workout-strips-fat-and-builds-lean-muscle/<br><br>
+# API Links
+<a href="https://developer.edamam.com/edamam-nutrition-api">Edamam Nutrition API</a>
+<a href="https://api-ninjas.com/api/exercises">Ninjas API</a>
 
 
-## ScreenShot
-![Web screenshot](screencapture-tamerbekir-github-io-active-eats-Favs-html-2024-02-05-19_44_52.png)<br><br>
-<br>
-![Web screenshot](screen-shot-active-eats-homepage.jpg)<br><br>
+# Image Credits
 
+<a href="https://www.freepik.com/photos/gym-wallpaper">Gym</a> <br>
+<a href="https://www.prevention.com/food-nutrition/healthy-eating/g33416014/heart-healthy-food-wd">Healthy Food</a><br>
+<a href="https://mainafinance.medium.com/unlock-your-full-potential-10-best-wheelchair-exercises-for-a-strong-and-fit-body-5b3608ad8654<">WheelChair Fitness</a><br>
+<a href="https://www.menshealth.com/fitness/a19530279/resistance-training-to-build-muscle/">Training</a><br>
+<a href="https://www.menshealth.com/uk/health/a39726399/cyclists-live-longer-study/">Cycling</a><br>
+<a href="https://www.pexels.com/search/yoga/">Yoga</a><br>
+<a href="https://www.pexels.com/search/yoga/">Yoga</a><br>
+<a href="https://www.menshealth.com/uk/fitness/a758565/this-20-minute-rowing-workout-strips-fat-and-builds-lean-muscle/">Rowing</a><br>
+
+
+# Screenshot
+![Active Eats](assets/images/screen-shot-active-eats-homepage.jpg)
+![Active Eats](assets/images/screencapture-tamerbekir-github-io-active-eats-Favs-html-2024-02-05-19_44_52.png)
+
+
+# Contributors
+<a href="https://github.com/rafarizvi">Rafa Rizvi</a><br>
+<a href="https://github.com/Tamerbekir">Tamer Bekir</a><br>
+<a href="https://github.com/JaysonNunez1">Jayson Nunez</a><br>
 
 
 
