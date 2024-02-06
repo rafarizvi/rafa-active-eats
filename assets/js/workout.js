@@ -1,10 +1,12 @@
 //when the user clicks on the search button, the API will generate data and search for the activity they
 //entered into the text/search field
 document.getElementById("workoutBtn").addEventListener("click", function () {
+    favEl.textContent = ""
     let searchedWorkout = document.getElementById("searchWorkout").value;
     getExercises(searchedWorkout);
     searchWorkout(searchedWorkout)
     console.log("button click to pull API working");
+
 });
 
 let workoutEl = document.getElementById("workout-option")
