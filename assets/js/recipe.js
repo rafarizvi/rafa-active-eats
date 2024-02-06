@@ -35,7 +35,7 @@ mealEl.addEventListener('change', function(e) {
 
 // gets user input for calories.
 function inputValues() {
-    let calorieVal = recipeInputEl.value;
+    let calorieVal = recipeInputEl.value.trim();
     searchArr.splice(2, 1, calorieVal);
 
     selectRecipe(searchArr[0], searchArr[1], searchArr[2]);   
@@ -112,7 +112,9 @@ function displayInfo(api) {
     totServingList.textContent = `Servings: ${Math.round(apiServing)}`;
     CalperServingList.textContent = `Calories per serving: ${Math.round((apiCalories/apiServing))}`;
     aref.href = getRecipe;
-    aref.innerHTML = 'Instructions'
+    aref.target = '_blank';
+    aref.rel = 'noreferrer noopener';
+    aref.innerHTML = 'Instructions';
 
     // append elements to page.
     extUrl.appendChild(aref);
