@@ -40,28 +40,29 @@ function getExercises(searchedWorkout) {
 //when user types in a spefic workout, a photo of that workout will generate. 
 function searchWorkout(workoutImg) {
     let workoutImageElement = document.getElementById("workoutImage")
-    if (workoutImg == "running") {
+    let formattedSearch = workoutImg.toLowerCase().trim()
+    if (formattedSearch == "running") {
         workoutImageElement.src = "./assets/images/running.jpeg"
     }
-    if (workoutImg == "walking") {
+    if (formattedSearch == "walking") {
         workoutImageElement.src = "./assets/images/walking.jpeg"
     }
-    if (workoutImg == "cycling") {
+    if (formattedSearch == "cycling") {
         workoutImageElement.src = "./assets/images/cycling.jpeg"
     }
-    if (workoutImg == "training") {
+    if (formattedSearch == "training") {
         workoutImageElement.src = "./assets/images/strength.jpeg"
     }
-    if (workoutImg == "yoga") {
+    if (formattedSearch == "yoga") {
         workoutImageElement.src = "./assets/images/yoga.jpeg"
     }
-    if (workoutImg == "rowing") {
+    if (formattedSearch == "rowing") {
         workoutImageElement.src = "./assets/images/rowing.jpeg"
     }
-    if (workoutImg == "hiking") {
+    if (formattedSearch == "hiking") {
         workoutImageElement.src = "./assets/images/hiking.jpeg"
     }
-    if (workoutImg == "wheelchair") {
+    if (formattedSearch == "wheelchair") {
         workoutImageElement.src = "./assets/images/wheelchair.jpeg"
     }
 }
