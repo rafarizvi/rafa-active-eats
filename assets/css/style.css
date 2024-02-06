@@ -105,9 +105,9 @@ li {
     color: rgba(3, 2, 2, 0.72);
 }
 
-#recipeImage {
-    height: 320px;
-    width: 320px;
+#recipeImage, #workoutImage {
+    height: 350px;
+    width: 350px;
     border-radius: 15px;
 }
 
