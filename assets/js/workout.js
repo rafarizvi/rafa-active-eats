@@ -1,37 +1,5 @@
-
 //when the user clicks on the search button, the API will generate data and search for the activity they
 //entered into the text/search field
-
-function searchWorkout(workoutImg){
-    let workoutImageElement = document.getElementById("workoutImage")
-    if (workoutImg == "running") {
-        workoutImageElement.src = "./assets/images/running.jpeg"
-    }
-    if (workoutImg == "walking") {
-        workoutImageElement.src = "./assets/images/walking.jpeg"
-    }
-    if (workoutImg == "cycling") {
-        workoutImageElement.src = "./assets/images/cycling.jpeg"
-    }
-    if (workoutImg == "training") {
-        workoutImageElement.src = "./assets/images/strength.jpeg"
-    }
-    if (workoutImg == "yoga") {
-        workoutImageElement.src = "./assets/images/yoga.jpeg"
-    }
-    if (workoutImg == "rowing") {
-        workoutImageElement.src = "./assets/images/rowing.jpeg"
-    }
-    if (workoutImg == "hiking") {
-        workoutImageElement.src = "./assets/images/hiking.jpeg"
-    }
-    if (workoutImg == "wheelchair") {
-        workoutImageElement.src = "./assets/images/wheelchair.jpeg"
-    }
-    console.log(searchWorkout)
-}
-
-
 document.getElementById("workoutBtn").addEventListener("click", function () {
     let searchedWorkout = document.getElementById("searchWorkout").value;
     getExercises(searchedWorkout);
@@ -41,6 +9,7 @@ document.getElementById("workoutBtn").addEventListener("click", function () {
 
 let workoutEl = document.getElementById("workout-option")
 let favEl = document.getElementById("addedFavBtn")
+
 workoutEl.addEventListener("change", function (e) {
     let choseWorkout = e.target.value
     getExercises(choseWorkout)
@@ -68,6 +37,34 @@ function getExercises(searchedWorkout) {
     });
 }
 
+//when user types in a spefic workout, a photo of that workout will generate. 
+function searchWorkout(workoutImg) {
+    let workoutImageElement = document.getElementById("workoutImage")
+    if (workoutImg == "running") {
+        workoutImageElement.src = "./assets/images/running.jpeg"
+    }
+    if (workoutImg == "walking") {
+        workoutImageElement.src = "./assets/images/walking.jpeg"
+    }
+    if (workoutImg == "cycling") {
+        workoutImageElement.src = "./assets/images/cycling.jpeg"
+    }
+    if (workoutImg == "training") {
+        workoutImageElement.src = "./assets/images/strength.jpeg"
+    }
+    if (workoutImg == "yoga") {
+        workoutImageElement.src = "./assets/images/yoga.jpeg"
+    }
+    if (workoutImg == "rowing") {
+        workoutImageElement.src = "./assets/images/rowing.jpeg"
+    }
+    if (workoutImg == "hiking") {
+        workoutImageElement.src = "./assets/images/hiking.jpeg"
+    }
+    if (workoutImg == "wheelchair") {
+        workoutImageElement.src = "./assets/images/wheelchair.jpeg"
+    }
+}
 //variables for the three main keys the user will get generated- the workout, the time and the calories it burns from the API
 function exercises(workoutData) {
     let workout;
@@ -85,25 +82,25 @@ function exercises(workoutData) {
         workout = workoutData[length].name
         workoutDuration = workoutData[length].duration_minutes;
         calories = workoutData[length].calories_per_hour;
-    } else { 
+    } else {
         location.href = "./404.html"
     }
 
-        //the activity will append on the page after the user searches for it and will included text to make the sentence more complete and concise.
-        let activity = [
-            "This workout will include " + workout,
-            " for " + workoutDuration + " minutes",
-            " which will burn " + calories + " total calories."
-        ];
-        //The activity, time and calories will append from this if statement and append to the page for the user to see
-        if (activity) {
-            const workoutChoice = activity;
-            const workoutChoiceEl = document.createElement('p');
-            workoutChoiceEl.textContent = `${workoutChoice}`;
-            const workoutChoiceElSection = document.getElementById('workoutName');
-            workoutChoiceElSection.innerHTML = '';
-            workoutChoiceElSection.appendChild(workoutChoiceEl);
-            console.log(activity);
+    //the activity will append on the page after the user searches for it and will included text to make the sentence more complete and concise.
+    let activity = [
+        "This workout will include " + workout,
+        " for " + workoutDuration + " minutes",
+        " which will burn " + calories + " total calories."
+    ];
+    //The activity, time and calories will append from this if statement and append to the page for the user to see
+    if (activity) {
+        const workoutChoice = activity;
+        const workoutChoiceEl = document.createElement('p');
+        workoutChoiceEl.textContent = `${workoutChoice}`;
+        const workoutChoiceElSection = document.getElementById('workoutName');
+        workoutChoiceElSection.innerHTML = '';
+        workoutChoiceElSection.appendChild(workoutChoiceEl);
+        console.log(activity);
     }
     //when the user clicks on the workoutFav butto, the users generated workout will go to local storage
     //and append to their favorites page. The workout they saved will stay there until they decide to clear it
@@ -135,7 +132,7 @@ function exercises(workoutData) {
             storedWorkout.push(lastFave);
             let newFav = JSON.stringify(storedWorkout);
             localStorage.setItem("storedWorkout", newFav);
-            window.href="./Favs.html";
+            window.href = "./Favs.html";
         }
     });
 }

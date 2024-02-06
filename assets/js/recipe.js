@@ -1,4 +1,3 @@
-
 // recipe search card
 const recipeInputEl = document.getElementById('searchRecipe');
 const recipeSearchBtn = document.getElementById('recipeBtn');

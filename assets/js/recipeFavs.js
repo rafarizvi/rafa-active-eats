@@ -1,6 +1,4 @@
-
-
-
+// existing elements on recipe fav cards.
 const favDisplay = document.querySelector('.displayFav');
 const recipeSection = document.getElementById('recipe-section-id');
 
