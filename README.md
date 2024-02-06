@@ -35,7 +35,9 @@ https://developer.edamam.com/edamam-nutrition-api<br><br>
 https://api-ninjas.com/api/exercises<br><br>
 
 ## ScreenShot
-![Web screenshot](screencapture-127-0-0-1-5501-index-html-2024-02-04-22_42_36.png)
+![Web screenshot](screencapture-tamerbekir-github-io-active-eats-Favs-html-2024-02-05-19_44_52.png)<br><br>
+![Web screenshot](screencapture-tamerbekir-github-io-active-eats-2024-02-05-19_39_48.png)<br><br>
+
 
 
 
