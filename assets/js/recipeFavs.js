@@ -2,6 +2,7 @@
 
 
 const favDisplay = document.querySelector('.displayFav');
+const recipeSection = document.getElementById('recipe-section-id');
 
 let storedFavRecipes = JSON.parse(localStorage.getItem('savedItems'));
 
@@ -9,6 +10,10 @@ let storedFavRecipes = JSON.parse(localStorage.getItem('savedItems'));
 function displayFavs(fav) {
     // function runs only if local storage contains value(s).
     if (fav !== null) {
+
+        // removed border-top on favs page.
+        recipeSection.classList.remove('recipe-section');
+        
         for (let i = 0; i < fav.length; i++){
             // get required data from api.
             let favRecipeName = fav[i].label;
@@ -29,8 +34,11 @@ function displayFavs(fav) {
             const favTotServing = document.createElement('li');
             const favCalperServing = document.createElement('li');
             
+            // add attributes to new elements.
+            titleDiv.classList.add('col-12', 'fav-Div');
+            imageEl.classList.add('fav-img');
+            
             // add values to new elements.
-            titleDiv.classList.add('col-12');
             titleEl.textContent = favRecipeName;
             imageEl.src = favImgElSrc;
             favCalorie.textContent= `Total Calories: ${Math.round(favCalories)}`;
@@ -70,8 +78,5 @@ function displayFavs(fav) {
 
 }
 
-
 displayFavs(storedFavRecipes);
-
-
 
